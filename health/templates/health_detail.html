@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>健康状態詳細画面</title>
+</head>
+<body>
+<h1>健康状態詳細</h1>
+
+<a class="btn btn-secondary mt-5 ml-2" href="{% url 'health:health_update' health.pk %}">修正</a>
+<a class="btn btn-secondary mt-5 ml-2" href="{% url 'health:health_delete' health.pk %}">削除</a>
+<button onclick="location.href='{% url 'health:index' %}'">戻る</button>
+</body>
+</html>

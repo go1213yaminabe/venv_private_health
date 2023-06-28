@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
+<head>
+    <meta charset="UTF-8">
+    <title>健康状態削除確認画面</title>
+    <p>健康状態削除確認</p>
+    <style> .box{border: solid 3px #000}</style>
+
+</head>
+<body>
+<form method="POST">
+    <p><font size=5>本当に削除しますか？</font></p>
+    {% csrf_token %}
+    <button class="btn btn-primary mt-5" type="submit">削除</button>
+</form>
+
+
+<br><br><button><a class="btn btn-secondary mt-5 ml-2" href="{% url 'health:health_detail' health.pk %}">キャンセル</a></button>
+</body>
+</div>
+
+</html>

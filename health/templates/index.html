@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>健康状態一覧画面</title>
+</head>
+<body>
+<h1>健康状態一覧</h1>
+<div class="post-preview">
+    {% for health in object_list %}
+    <a href="{% url 'health:health_detail' health.pk %}">
+        {{ health.niti }}
+        {{ health.morning_state }}
+        {{ health.night_state }}
+    </a>
+    {% empty %}
+    <p>記録がありません。</p>
+    {% endfor %}
+</div>
+
+
+
+<a class="btn btn-primary" href="{% url 'health:health_create' %}">新規登録</a>
+</body>
+</html>

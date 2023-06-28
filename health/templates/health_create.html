@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>健康状態登録画面</title>
+</head>
+<body>
+    <h1>健康状態登録</h1>
+    <form method="POST">
+        {% csrf_token %}
+            <table class="table">
+                {{ form.as_table }}
+            </table>
+            <button class="btn btn-primary" type="submit">作成</button>
+            <a class="btn btn-secondary mt-5 ml-2" href="{% url 'health:index' %}" >戻る</a>
+        </form>
+</body>
+</html>
