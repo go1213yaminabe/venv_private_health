@@ -6,7 +6,83 @@
 </head>
 <body>
 <h1>健康状態詳細</h1>
+<div class="container my-div-style">
+    <div class="row">
+        <div class="col-3">
+            <strong>朝の症状</strong>
+        </div>
+        <div class="col-9">
+            {{ object.morning_state }}
+        </div>
+    </div>
 
+    <hr>
+
+    <div class="row">
+        <div class="col-3">
+            <strong>朝の体温</strong>
+        </div>
+        <div class="col-9">
+            {{ object.morning_temperature }}
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-3">
+            <strong>夜の症状</strong>
+        </div>
+        <div class="col-9">
+            {{ object.night_state }}
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-3">
+            <strong>夜の体温</strong>
+        </div>
+        <div class="col-9">
+            {{ object.night_temperature }}
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-3">
+            <strong>備考</strong>
+        </div>
+        <div class="col-9" style="word-wrap: break-word;">
+            {{ object.note }}
+        </div>
+    </div>
+
+
+    <hr>
+
+    <div class="row">
+        <div class="col-3">
+            <strong>作成日時</strong>
+        </div>
+        <div class="col-9">
+            {{ object.niti }}
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-3">
+            <strong>更新日時</strong>
+        </div>
+        <div class="col-9">
+            {{ object.updated_at }}
+        </div>
+    </div>
+</div>
 <a class="btn btn-secondary mt-5 ml-2" href="{% url 'health:health_update' health.pk %}">修正</a>
 <a class="btn btn-secondary mt-5 ml-2" href="{% url 'health:health_delete' health.pk %}">削除</a>
 <button onclick="location.href='{% url 'health:index' %}'">戻る</button>
