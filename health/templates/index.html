@@ -7,14 +7,28 @@
 <body>
 <h1>健康状態一覧</h1>
 <div class="post-preview">
+    <table border="2">
+                {% if health_list %}
+                <tr>
+                    <th>記録日時</th>
+                    <th>朝の症状</th>
+                    <th>夜の症状</th>
+                </tr>
+                {% for health in health_list %}
+                <tr>
+                    <td><a href="{% url 'health:health_detail' health.pk %}">{{ health.niti }}</a></td>
+                    <td><a href="{% url 'health:health_detail' health.pk %}">{{ health.morning_state }}</a></td>
+                    <td><a href="{% url 'health:health_detail' health.pk %}">{{ health.night_state}}</a></td>
+                </tr>
+                {% endfor %}
+                {% else %}
+                <p>記録がありません。</p>
+                {% endif %}
+
+            </table>
     {% for health in object_list %}
-    <a href="{% url 'health:health_detail' health.pk %}">
-        {{ health.niti }}
-        {{ health.morning_state }}
-        {{ health.night_state }}
-    </a>
+
     {% empty %}
-    <p>健康状態の記録がありません。</p>
     {% endfor %}
 </div>
 

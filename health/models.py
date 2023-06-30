@@ -5,7 +5,7 @@ class Health(models.Model):
     night_state = models.TextField(verbose_name='夜の症状', blank=True, null=True)
     night_temperature = models.IntegerField(verbose_name='夜の体温', blank=True, null=True)
     note = models.TextField(verbose_name='備考', blank=True, null=True)
-    niti = models.DateTimeField(verbose_name='作成日時',blank=True,null=True )
+    niti = models.DateTimeField(verbose_name='作成日時',blank=True,null=True,auto_now_add=True)
 
 
     class Meta:
